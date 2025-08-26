@@ -76,3 +76,32 @@ fi
 bashio::log.info 'Starting the Vaultwarden server...'
 cd /opt || bashio::exit.nok
 exec ./vaultwarden
+
+# SSO Options
+if bashio::config.has_value 'sso_enabled'; then
+    export SSO_ENABLED=$(bashio::config 'sso_enabled')
+fi
+if bashio::config.has_value 'sso_authority'; then
+    export SSO_AUTHORITY=$(bashio::config 'sso_authority')
+fi
+if bashio::config.has_value 'sso_client_id'; then
+    export SSO_CLIENT_ID=$(bashio::config 'sso_client_id')
+fi
+if bashio::config.has_value 'sso_client_secret'; then
+    export SSO_CLIENT_SECRET=$(bashio::config 'sso_client_secret')
+fi
+if bashio::config.has_value 'sso_scopes'; then
+    export SSO_SCOPES=$(bashio::config 'sso_scopes')
+fi
+if bashio::config.has_value 'sso_allow_unknown_email_verification'; then
+    export SSO_ALLOW_UNKNOWN_EMAIL_VERIFICATION=$(bashio::config 'sso_allow_unknown_email_verification')
+fi
+if bashio::config.has_value 'sso_client_cache_expiration'; then
+    export SSO_CLIENT_CACHE_EXPIRATION=$(bashio::config 'sso_client_cache_expiration')
+fi
+if bashio::config.has_value 'sso_only'; then
+    export SSO_ONLY=$(bashio::config 'sso_only')
+fi
+if bashio::config.has_value 'sso_signups_match_email'; then
+    export SSO_SIGNUPS_MATCH_EMAIL=$(bashio::config 'sso_signups_match_email')
+fi
