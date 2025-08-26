@@ -27,3 +27,12 @@ schema:
   certfile: str
   keyfile: str
   request_size_limit: int?
+  sso_enabled: bool?
+  sso_authority: str?
+  sso_client_id: str?
+  sso_client_secret: password?
+  sso_scopes": str?
+  sso_allow_unknown_email_verification: bool?
+  sso_client_cache_expiration: int?
+  sso_only: bool?
+  sso_signups_match_email: bool?
